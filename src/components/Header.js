@@ -119,7 +119,7 @@ const Header = () => {
               <IconButton
                 variant="outlined"
                 onClick={handleOpenUserMenu}
-                sx={{ p: 1, borderRadius: 0, border: "1px solid #a23259" }}
+                sx={{ p: 1, borderRadius: 0, border: "thin solid #a23259" , opacity:.8}}
               >
                 <ShoppingCartIcon style={{ color: "#a23259" }} />
               </IconButton>
