@@ -13,6 +13,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import facebook from "../img/f.png";
 import vk from "../img/vk.png";
 import { Button } from "@mui/material";
+import fondo from "../img/vinedo.webp";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -36,9 +37,13 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      className="appBar"
+      style={{ color: "#5e6061", fontWeight: "bolder" }}
+    >
       <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
+        <Toolbar disableGutters sx={{ justifyContent: "space-between", m: 5 }}>
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
@@ -90,24 +95,33 @@ const Header = () => {
             </IconButton>
           </Box>
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
             component="div"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
+              color: "#000",
             }}
           >
-            🍺 Beer of tomorrow
+            🍺 Beer of Tomorrow
           </Typography>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Button variant="contained" sx={{ mr: 5 }}>
+            <Button
+              variant="contained"
+              color="neutral"
+              sx={{ mr: 5, color: "#fff" }}
+            >
               Darse de alta
             </Button>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <ShoppingCartIcon />
+            <Tooltip title="Ver compra">
+              <IconButton
+                variant="outlined"
+                onClick={handleOpenUserMenu}
+                sx={{ p: 1, borderRadius: 0, border: "1px solid #a23259" }}
+              >
+                <ShoppingCartIcon style={{ color: "#a23259" }} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -174,11 +188,14 @@ const Header = () => {
             🍺 Beer of tomorrow
           </Typography>
         </Toolbar>
+        <hr />
         <Toolbar
           disableGutters
           sx={{
             display: { xs: "none", md: "flex" },
             justifyContent: "space-between",
+            mx: 5,
+            mb: 5,
           }}
         >
           <Typography variant="h6">Experiencia</Typography>•
