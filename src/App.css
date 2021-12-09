@@ -12,3 +12,9 @@
   background-position: 20rem -20rem;
   background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 600px) {
+  .appBar {
+    background-position: -10rem -10rem;
+  }
+}

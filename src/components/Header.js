@@ -12,14 +12,23 @@ import MenuItem from "@mui/material/MenuItem";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import facebook from "../img/f.png";
 import vk from "../img/vk.png";
-import { Button } from "@mui/material";
-import fondo from "../img/vinedo.webp";
+import { Button, useMediaQuery } from "@mui/material";
 
+const options = [
+  "Experiencia",
+  "Regalos",
+  "Vodka",
+  "Cerveza",
+  "Quienes Somos",
+  "Contáctanos",
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const xsQuery = useMediaQuery("(min-width:600px)");
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -111,7 +120,7 @@ const Header = () => {
             <Button
               variant="contained"
               color="neutral"
-              sx={{ mr: 5, color: "#fff" }}
+              sx={{ mr: 5, color: "#fff", display: { xs: "none" } }}
             >
               Darse de alta
             </Button>
@@ -119,7 +128,13 @@ const Header = () => {
               <IconButton
                 variant="outlined"
                 onClick={handleOpenUserMenu}
-                sx={{ p: 1, borderRadius: 0, border: "thin solid #a23259" , opacity:.8}}
+                sx={{
+                  p: 1,
+                  borderRadius: 0,
+                  border: "thin solid #a23259",
+                  opacity: 0.8,
+                  display: { xs: "none", md: "flex" },
+                }}
               >
                 <ShoppingCartIcon style={{ color: "#a23259" }} />
               </IconButton>
@@ -177,7 +192,13 @@ const Header = () => {
               sx={{
                 display: { xs: "block", md: "none" },
               }}
-            ></Menu>
+            >
+              {options.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
           </Box>
           <Typography
             variant="h6"
@@ -187,8 +208,21 @@ const Header = () => {
           >
             🍺 Beer of tomorrow
           </Typography>
+          <IconButton
+            variant="outlined"
+            onClick={handleOpenUserMenu}
+            sx={{
+              p: 1,
+              borderRadius: 0,
+              border: "thin solid #a23259",
+              opacity: 0.8,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
+            <ShoppingCartIcon style={{ color: "#a23259" }} />
+          </IconButton>
         </Toolbar>
-        <hr />
+        {xsQuery && <hr />}
         <Toolbar
           disableGutters
           sx={{
