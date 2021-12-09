@@ -1,4 +1,5 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Slider, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import MobileFilter from "./filters/MobileFilter";
 
 const Ecommerce = () => {
@@ -24,10 +25,7 @@ const Ecommerce = () => {
           style={{ textAlign: "center" }}
           md={4}
           sx={{ display: { xs: "none", md: "grid" } }}
-        >
-          <Typography variant="p">Nuestras mejores bebidas</Typography>
-          <Typography variant="h4">Beer Shop</Typography>
-        </Grid>
+        ></Grid>
 
         {/* Cards */}
         <Grid item style={{ textAlign: "center" }} xs={12} md={8}>
