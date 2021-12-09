@@ -116,11 +116,15 @@ const Header = () => {
             🍺 Beer of Tomorrow
           </Typography>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box style={{ display: "flex" }}>
             <Button
               variant="contained"
               color="neutral"
-              sx={{ mr: 5, color: "#fff", display: { xs: "none" } }}
+              sx={{
+                mr: 5,
+                color: "#fff",
+                display: { xs: "none", md: "flex" },
+              }}
             >
               Darse de alta
             </Button>
