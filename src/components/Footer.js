@@ -1,28 +1,11 @@
-import Grid from "@mui/material/Grid";
 import "./Footer.css";
-import {
-  FaFacebookSquare,
-  FaInstagramSquare,
-  FaLinkedin,
-  FaTwitterSquare,
-  FaLocationArrow,
-  FaPhoneAlt,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaLocationArrow, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { Box } from "@mui/system";
 import { Button, Typography, useMediaQuery } from "@mui/material";
 import facebook from "../img/f.png";
 import vk from "../img/vk.png";
 
 const Footer = () => {
-  const columnStyle = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center",
-  };
-  //320px, 480px, 760px, 1021px, 1200px
-
   const xs = useMediaQuery("(max-width:480px)"),
     md = useMediaQuery("(min-width: 761px)"),
     xl = useMediaQuery("(min-width:1021px)"),
@@ -37,6 +20,7 @@ const Footer = () => {
             display: "flex",
             justifyContent: xs ? "center" : "space-evenly",
             textAlign: "start",
+            alignItems: "flex-start",
           }}
         >
           <Box style={{ display: "inherit", alignItems: "center" }}>
@@ -96,19 +80,20 @@ const Footer = () => {
         {md && <hr />}
         <Box
           style={{
-            flexDirection: "row",
+            flexDirection: xs ? "column" : "row",
             display: "flex",
             justifyContent: "space-evenly",
             textAlign: "start",
+            alignItems: "flex-start",
           }}
         >
           <Box
             style={{
               display: "inherit",
-
               flexDirection: "column",
             }}
           >
+            {xs && <br />}
             <Typography variant="h4" sx={{ mb: 3 }}>
               Mas información
             </Typography>
@@ -141,22 +126,22 @@ const Footer = () => {
               </Typography>
             </Box>
           )}
-          {md && (
-            <Box style={{ display: "inherit", flexDirection: "column" }}>
-              <Typography variant="h4" sx={{ mb: 3 }}>
-                Venta y Distribución
-              </Typography>
-              <Typography variant="h5" sx={{ mb: 2 }}>
-                Venta canal mayorista
-              </Typography>
-              <Typography variant="h5" sx={{ mb: 2 }}>
-                Venta minorista VIP
-              </Typography>
-              <Typography variant="h5" sx={{ mb: 2 }}>
-                Envíos por fecha
-              </Typography>
-            </Box>
-          )}
+          {xs && <br />}
+          <Box style={{ display: "inherit", flexDirection: "column" }}>
+            <Typography variant="h4" sx={{ mb: 3 }}>
+              Venta y Distribución
+            </Typography>
+            <Typography variant="h5" sx={{ mb: 2 }}>
+              Venta canal mayorista
+            </Typography>
+            <Typography variant="h5" sx={{ mb: 2 }}>
+              Venta minorista VIP
+            </Typography>
+            <Typography variant="h5" sx={{ mb: 2 }}>
+              Envíos por fecha
+            </Typography>
+          </Box>
+
           {md && (
             <Box style={{ display: "inherit", flexDirection: "column" }}>
               <Typography variant="h4" sx={{ mb: 3 }}>
@@ -196,6 +181,11 @@ const Footer = () => {
             </Box>
           )}
         </Box>
+      </Box>
+      <Box fluid style={{ backgroundColor: "#faf8f6" }}>
+        <Typography variant="p">
+          Beer of Tomorrow &copy; 2021 - Developed by: Codereggs
+        </Typography>
       </Box>
     </>
   );
