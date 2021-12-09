@@ -43,14 +43,18 @@ const Footer = () => {
               <FaLocationArrow
                 style={{ color: "#a23259", fontSize: "1.2em" }}
               />
-              <Typography variant="h6">Petrovskaya Ulitsa, 8, 90</Typography>
+              <Typography variant="h6">
+                Petrovskaya <b>Ulitsa, 8, 90</b>
+              </Typography>
               <Typography variant="h6">PH, piso 1, entrada 33.</Typography>
             </Box>
           )}
           {md && (
             <Box style={{ display: "inherit", flexDirection: "column" }}>
               <FaPhoneAlt style={{ color: "#a23259", fontSize: "1.2em" }} />
-              <Typography variant="h6">+7 (495) 137-77-45</Typography>
+              <Typography variant="h6">
+                +7 (495) <b>137-77-45</b>
+              </Typography>
               <Typography variant="h6">10:00 - 20:00</Typography>
             </Box>
           )}

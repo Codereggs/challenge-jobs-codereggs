@@ -13,7 +13,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Bodoni Moda",
+    fontFamily: "Roboto",
     color: "#8a8a89",
   },
 });
