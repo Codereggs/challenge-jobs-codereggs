@@ -7,9 +7,9 @@ import vk from "../img/vk.png";
 
 const Footer = () => {
   const xs = useMediaQuery("(max-width:480px)"),
-    md = useMediaQuery("(min-width: 761px)"),
-    xl = useMediaQuery("(min-width:1021px)"),
-    xxl = useMediaQuery("(min-width:1200px)");
+    md = useMediaQuery("(min-width: 761px)");
+  /*     xl = useMediaQuery("(min-width:1021px)"),
+    xxl = useMediaQuery("(min-width:1200px)"); */
 
   return (
     <>
