@@ -18,3 +18,7 @@
     background-position: -10rem -10rem;
   }
 }
+
+.mainShop {
+  display: grid;
+}
