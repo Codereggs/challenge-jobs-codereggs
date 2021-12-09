@@ -1,48 +1,11 @@
-import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
-import {
-  Collapse,
-  Grid,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Typography,
-} from "@mui/material";
-import { Box } from "@mui/system";
-import { useState } from "react";
+import { Grid, Typography } from "@mui/material";
+import MobileFilter from "./filters/MobileFilter";
 
 const Ecommerce = () => {
-  const [open, setOpen] = useState(true);
-
-  const handleClick = () => {
-    setOpen(!open);
-  };
   return (
     <>
       {/* Filtro Mobile */}
-      <Grid
-        item
-        style={{ textAlign: "center" }}
-        sx={{ display: { xs: "grid", md: "none" } }}
-        xs={12}
-      >
-        <ListItemButton onClick={handleClick}>
-          <ListItemIcon>BOX</ListItemIcon>
-          <ListItemText primary="Inbox" />
-          {open ? <ExpandLess /> : <ExpandMore />}
-        </ListItemButton>
-        <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemIcon>
-                <StarBorder />
-              </ListItemIcon>
-              <ListItemText primary="Starred" />
-            </ListItemButton>
-          </List>
-        </Collapse>
-      </Grid>
+      <MobileFilter />
       {/* Titulo */}
       <Grid container className="mainShop">
         <Grid
