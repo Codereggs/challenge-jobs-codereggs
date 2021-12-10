@@ -8,6 +8,7 @@ const FilterPC = () => {
         style={{
           boxShadow: "0px 0px 26px 0px rgba(0,0,0,0.20)",
           margin: "1rem",
+          marginTop: "0",
           padding: "3rem",
         }}
       >
