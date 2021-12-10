@@ -1,10 +1,9 @@
-import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import {
   Checkbox,
   Collapse,
   FormControlLabel,
   Grid,
-  List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
