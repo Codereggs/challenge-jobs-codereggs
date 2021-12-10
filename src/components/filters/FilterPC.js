@@ -1,4 +1,4 @@
-import { Slider, Typography } from "@mui/material";
+import { Checkbox, FormControlLabel, Slider, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 const FilterPC = () => {
@@ -6,10 +6,9 @@ const FilterPC = () => {
     <>
       <Box
         style={{
-          borderRadius: "15px",
-          border: "1px black solid",
+          boxShadow: "0px 0px 26px 0px rgba(0,0,0,0.20)",
           margin: "1rem",
-          padding: "1rem",
+          padding: "3rem",
         }}
       >
         <Typography variant="h4" style={{ textAlign: "start" }}>
@@ -25,6 +24,31 @@ const FilterPC = () => {
           valueLabelDisplay="auto"
           /*  getAriaValueText={valuetext} */
         />
+        <hr />
+        <Typography variant="h6" style={{ textAlign: "start" }}>
+          ABV:
+        </Typography>
+        <FormControlLabel control={<Checkbox />} label="Mayor a Menor" />
+        <FormControlLabel control={<Checkbox />} label="Menor a Mayor" />
+
+        <hr />
+        <Typography variant="h6" style={{ textAlign: "start" }}>
+          IBU
+        </Typography>
+        <FormControlLabel control={<Checkbox />} label="Mayor a Menor" />
+        <FormControlLabel control={<Checkbox />} label="Menor a Mayor" />
+        <hr />
+        <Typography variant="h6" style={{ textAlign: "start" }}>
+          PH
+        </Typography>
+        <FormControlLabel control={<Checkbox />} label="Mayor a Menor" />
+        <FormControlLabel control={<Checkbox />} label="Menor a Mayor" />
+        <hr />
+        <Typography variant="h6" style={{ textAlign: "start" }}>
+          Volumen (Lts.)
+        </Typography>
+        <FormControlLabel control={<Checkbox />} label="Mayor a Menor" />
+        <FormControlLabel control={<Checkbox />} label="Menor a Mayor" />
       </Box>
     </>
   );
