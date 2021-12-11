@@ -15,19 +15,10 @@ import vk from "../img/vk.png";
 import { Button, useMediaQuery } from "@mui/material";
 import { Link, NavLink } from "react-router-dom";
 
-const options = [
-  "Experiencia",
-  "Regalos",
-  "Vodka",
-  "Cerveza",
-  "Quienes Somos",
-  "Contáctanos",
-];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const options = ["Experiencia", "Regalos", "Vodka", "Cerveza", "Quienes Somos"];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const xsQuery = useMediaQuery("(min-width:600px)");
 
@@ -172,10 +163,17 @@ const Header = () => {
               }}
             >
               {options.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
+                <Link to="/">
+                  <MenuItem key={setting} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                </Link>
               ))}
+              <Link to="/contact">
+                <MenuItem key={100} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">Contáctanos</Typography>
+                </MenuItem>
+              </Link>
             </Menu>
           </Box>
           <Link to="/">
@@ -228,7 +226,7 @@ const Header = () => {
           <NavLink to="/">
             <Typography variant="h6">Quienes Somos </Typography>
           </NavLink>
-          <NavLink to="/contacto">
+          <NavLink to="/contact">
             <Typography variant="h6">Contáctanos </Typography>
           </NavLink>
         </Toolbar>
