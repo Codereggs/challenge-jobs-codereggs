@@ -13,7 +13,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Roboto",
+    fontFamily: "Russo One",
     color: "#8a8a89",
   },
 });
