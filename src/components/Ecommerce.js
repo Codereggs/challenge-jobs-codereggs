@@ -5,7 +5,6 @@ import MobileFilter from "./filters/MobileFilter";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getList } from "../features/listGet";
-import { Link } from "react-router-dom";
 
 const Ecommerce = () => {
   const { list } = useSelector((state) => state.get);
