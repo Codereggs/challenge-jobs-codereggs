@@ -13,6 +13,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import facebook from "../img/f.png";
 import vk from "../img/vk.png";
 import { Button, useMediaQuery } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const options = [
   "Experiencia",
@@ -33,16 +34,9 @@ const Header = () => {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -128,43 +122,22 @@ const Header = () => {
             >
               Darse de alta
             </Button>
-            <Tooltip title="Ver compra">
-              <IconButton
-                variant="outlined"
-                onClick={handleOpenUserMenu}
-                sx={{
-                  p: 1,
-                  borderRadius: 0,
-                  border: "thin solid #a23259",
-                  opacity: 0.8,
-                  display: { xs: "none", md: "flex" },
-                }}
-              >
-                <ShoppingCartIcon style={{ color: "#a23259" }} />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            <Link to="/buy">
+              <Tooltip title="Ver compra">
+                <IconButton
+                  variant="outlined"
+                  sx={{
+                    p: 1,
+                    borderRadius: 0,
+                    border: "thin solid #a23259",
+                    opacity: 0.8,
+                    display: { xs: "none", md: "flex" },
+                  }}
+                >
+                  <ShoppingCartIcon style={{ color: "#a23259" }} />
+                </IconButton>
+              </Tooltip>
+            </Link>
           </Box>
           {/* MOBILE */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -212,19 +185,20 @@ const Header = () => {
           >
             🍺 Beer of tomorrow
           </Typography>
-          <IconButton
-            variant="outlined"
-            onClick={handleOpenUserMenu}
-            sx={{
-              p: 1,
-              borderRadius: 0,
-              border: "thin solid #a23259",
-              opacity: 0.8,
-              display: { xs: "flex", md: "none" },
-            }}
-          >
-            <ShoppingCartIcon style={{ color: "#a23259" }} />
-          </IconButton>
+          <Link to="/buy">
+            <IconButton
+              variant="outlined"
+              sx={{
+                p: 1,
+                borderRadius: 0,
+                border: "thin solid #a23259",
+                opacity: 0.8,
+                display: { xs: "flex", md: "none" },
+              }}
+            >
+              <ShoppingCartIcon style={{ color: "#a23259" }} />
+            </IconButton>
+          </Link>
         </Toolbar>
         {xsQuery && <hr />}
         <Toolbar

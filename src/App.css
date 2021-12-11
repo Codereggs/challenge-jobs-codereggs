@@ -35,3 +35,12 @@
 .ecommerceCards:hover > img.ornamentaCards {
   opacity: 1 !important;
 }
+button.shoppingBtn {
+  display: none;
+  visibility: none;
+}
+
+.precio:hover > button.shoppingBtn {
+  display: inline-flex;
+  visibility: visible;
+}

@@ -51,14 +51,7 @@ const Ecommerce = () => {
         >
           {list.map((e) => (
             <Grid item={true} xs={12} md={4} className="precio">
-              <Link
-                to="/product"
-                onClick={() =>
-                  window.localStorage.setItem("product", `${e.id}`)
-                }
-              >
-                <EcommerceCard {...e} key={e.id} />
-              </Link>
+              <EcommerceCard {...e} key={e.id} />
             </Grid>
           ))}
         </Grid>
