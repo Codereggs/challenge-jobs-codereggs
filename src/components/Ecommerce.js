@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Link, Typography } from "@mui/material";
 import EcommerceCard from "./cards/EcommerceCard";
 import FilterPC from "./filters/FilterPC";
 import MobileFilter from "./filters/MobileFilter";
@@ -50,7 +50,9 @@ const Ecommerce = () => {
         >
           {list.map((e) => (
             <Grid item={true} xs={12} md={4} className="precio">
-              <EcommerceCard {...e} key={e.id} />
+              <Link to="/product">
+                <EcommerceCard {...e} key={e.id} />
+              </Link>
             </Grid>
           ))}
         </Grid>

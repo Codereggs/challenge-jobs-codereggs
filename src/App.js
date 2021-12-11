@@ -7,15 +7,18 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import theme from "./theme/theme.js";
 import { store } from "./app/store";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
         <Provider store={store}>
-          <Header />
-          <Ecommerce />
-          <Footer />
+          <BrowserRouter>
+            <Header />
+            <Ecommerce />
+            <Footer />
+          </BrowserRouter>
         </Provider>
       </ThemeProvider>
     </div>
