@@ -1,4 +1,4 @@
-import { Grid, Link, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import EcommerceCard from "./cards/EcommerceCard";
 import FilterPC from "./filters/FilterPC";
 import MobileFilter from "./filters/MobileFilter";
