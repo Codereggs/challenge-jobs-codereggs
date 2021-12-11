@@ -3,8 +3,6 @@ import Box from "@mui/material/Box";
 import "./Footer.css";
 import { FaLocationArrow, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { Typography, useMediaQuery, Grid } from "@mui/material";
-import facebook from "../img/f.png";
-import vk from "../img/vk.png";
 import SimpleMap from "./Gmaps";
 
 const Contact = () => {
