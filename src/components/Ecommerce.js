@@ -5,6 +5,7 @@ import MobileFilter from "./filters/MobileFilter";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getList } from "../features/listGet";
+import { Link } from "react-router-dom";
 
 const Ecommerce = () => {
   const { list } = useSelector((state) => state.get);
@@ -50,7 +51,14 @@ const Ecommerce = () => {
         >
           {list.map((e) => (
             <Grid item={true} xs={12} md={4} className="precio">
-              <EcommerceCard {...e} key={e.id} />
+              <Link
+                to="/product"
+                onClick={() =>
+                  window.localStorage.setItem("product", `${e.id}`)
+                }
+              >
+                <EcommerceCard {...e} key={e.id} />
+              </Link>
             </Grid>
           ))}
         </Grid>

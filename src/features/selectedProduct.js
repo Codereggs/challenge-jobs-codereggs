@@ -1,16 +1,31 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+export const getList = createAsyncThunk("get/getList", async () => {
+  return fetch(
+    `https://api.punkapi.com/v2/beers?ids=${window.localStorage.getItem(
+      "product"
+    )}`
+  ).then((res) => res.json());
+});
 
 const selectedProduct = createSlice({
   name: "selectedProduct",
   initialState: {
-    product: [],
+    list: [],
+    state: null,
   },
-  reducers: {
-    getProductDetails: (state, { payload }) => {
-      state.product = payload;
+  extraReducers: {
+    [getList.pending]: (state, action) => {
+      state.status = "loading";
+    },
+    [getList.fulfilled]: (state, { payload }) => {
+      state.list = payload;
+      state.status = "success";
+    },
+    [getList.rejected]: (state, action) => {
+      state.status = "failed";
     },
   },
 });
 
-export const { getProductDetails } = selectedProduct.actions;
 export default selectedProduct.reducer;
