@@ -20,11 +20,13 @@ const FilterPC = () => {
   const dispatch = useDispatch();
   const handleChange = (event, newValue) => {
     let allPrices = document.querySelectorAll(".precio");
+    console.log(allPrices);
     allPrices.forEach((e) => {
-      let dato = e.children[0].children[1].children[3].textContent.replace(
-        "$",
-        ""
-      );
+      let dato =
+        e.children[0].children[0].children[1].children[3].textContent.replace(
+          "$",
+          ""
+        );
       if (dato > event.target.value[1] || dato < event.target.value[0]) {
         e.classList.add("disabled");
       } else {

@@ -7,7 +7,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { IconButton, useMediaQuery } from "@mui/material";
 import orna from "../../img/orna.svg";
 import { useDispatch } from "react-redux";
-import { choosed } from "../../features/productChoosed";
+import { choosed, price } from "../../features/productChoosed";
 import { Link } from "react-router-dom";
 
 const randomPrice = () => {
@@ -53,7 +53,9 @@ export default function EcommerceCard(props) {
             <br />
             <img src={props.image_url} alt={props.name} width="50vw" />
 
-            <Typography variant="h5">$ {randomPrice()}</Typography>
+            <Typography variant="h5" id="precioUnico">
+              $ {randomPrice()}
+            </Typography>
           </CardContent>
 
           <CardActions
@@ -74,7 +76,10 @@ export default function EcommerceCard(props) {
           padding: "1rem",
           transform: "translate(0, -50px)",
         }}
-        onClick={() => dispatch(choosed(props))}
+        onClick={() => {
+          dispatch(choosed(props));
+          dispatch(price(randomPrice()));
+        }}
         className="shoppingBtn"
       >
         <ShoppingCartIcon style={{ color: "#fff" }} />
