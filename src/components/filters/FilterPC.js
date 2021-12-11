@@ -17,7 +17,6 @@ const FilterPC = () => {
   const [ABVSwitch, setABVSwitch] = useState([false, false]);
   const [IBUSwitch, setIBUSwitch] = useState([false, false]);
   const [PHSwitch, setPHSwitch] = useState([false, false]);
-  const [VolumeSwitch, setVolumeSwitch] = useState([false, false]);
   const dispatch = useDispatch();
   const handleChange = (event, newValue) => {
     let allPrices = document.querySelectorAll(".precio");
