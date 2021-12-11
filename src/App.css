@@ -51,3 +51,16 @@ button.shoppingBtn {
     visibility: visible;
   }
 }
+
+svg {
+  font-size: 2rem;
+}
+
+a {
+  color: #5e6061;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+}

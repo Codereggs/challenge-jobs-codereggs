@@ -13,7 +13,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import facebook from "../img/f.png";
 import vk from "../img/vk.png";
 import { Button, useMediaQuery } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const options = [
   "Experiencia",
@@ -213,12 +213,24 @@ const Header = () => {
             mb: 5,
           }}
         >
-          <Typography variant="h6">Experiencia</Typography>•
-          <Typography variant="h6">Regalos</Typography>•
-          <Typography variant="h6">Vodka</Typography>•
-          <Typography variant="h6">Cerveza</Typography>•
-          <Typography variant="h6">Quienes Somos </Typography>•
-          <Typography variant="h6">Contáctanos </Typography>
+          <NavLink to="/">
+            <Typography variant="h6">Experiencia </Typography>
+          </NavLink>
+          <NavLink to="/">
+            <Typography variant="h6">Regalos </Typography>
+          </NavLink>
+          <NavLink to="/">
+            <Typography variant="h6">Vodka </Typography>
+          </NavLink>
+          <NavLink to="/">
+            <Typography variant="h6">Cerveza </Typography>
+          </NavLink>
+          <NavLink to="/">
+            <Typography variant="h6">Quienes Somos </Typography>
+          </NavLink>
+          <NavLink to="/contacto">
+            <Typography variant="h6">Contáctanos </Typography>
+          </NavLink>
         </Toolbar>
       </Container>
     </AppBar>
