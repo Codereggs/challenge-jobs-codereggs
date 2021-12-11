@@ -27,3 +27,11 @@
   display: none;
   visibility: none;
 }
+
+.ecommerceCards:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.ecommerceCards:hover > img.ornamentaCards {
+  opacity: 1 !important;
+}

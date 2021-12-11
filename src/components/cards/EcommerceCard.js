@@ -25,12 +25,14 @@ export default function EcommerceCard(props) {
         alignItems: "center",
         flexDirection: "column",
       }}
+      className="ecommerceCards"
     >
       <img
         src={orna}
         alt="Ornamenta"
         width="50px"
         style={{ transform: "rotate(180deg)", opacity: ".2" }}
+        className="ornamentaCards"
       />
       <CardContent
         style={{
