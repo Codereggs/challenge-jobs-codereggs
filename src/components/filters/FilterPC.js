@@ -41,6 +41,7 @@ const FilterPC = () => {
           margin: "1rem",
           marginTop: "0",
           padding: "3rem",
+          maxHeight: "100vh",
         }}
       >
         <Typography variant="h4" style={{ textAlign: "start" }}>
