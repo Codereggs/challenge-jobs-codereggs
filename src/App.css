@@ -44,3 +44,10 @@ button.shoppingBtn {
   display: inline-flex;
   visibility: visible;
 }
+
+@media screen and (max-width: 600px) {
+  button.shoppingBtn {
+    display: inline-flex;
+    visibility: visible;
+  }
+}

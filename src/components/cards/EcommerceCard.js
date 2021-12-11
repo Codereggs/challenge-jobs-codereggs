@@ -33,6 +33,7 @@ export default function EcommerceCard(props) {
             justifyContent: xs ? "center" : "space-between",
             alignItems: "center",
             flexDirection: "column",
+            margin: "auto",
           }}
           className="ecommerceCards"
         >

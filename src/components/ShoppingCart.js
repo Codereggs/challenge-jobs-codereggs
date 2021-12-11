@@ -3,7 +3,9 @@ import ShoppingCard from "./cards/ShoppingCard";
 const ShoppingCart = () => {
   return (
     <>
-      <Typography variant="h3">Carro de Compras:</Typography>
+      <Typography variant="h3" sx={{ my: 5 }}>
+        Carro de Compras:
+      </Typography>
       <ShoppingCard></ShoppingCard>
     </>
   );

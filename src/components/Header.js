@@ -97,19 +97,20 @@ const Header = () => {
               <img src={facebook} alt="Facebook" style={{ width: "2rem" }} />
             </IconButton>
           </Box>
-          <Typography
-            variant="h4"
-            noWrap
-            component="div"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              color: "#000",
-            }}
-          >
-            🍺 Beer of Tomorrow
-          </Typography>
-
+          <Link to="/">
+            <Typography
+              variant="h4"
+              noWrap
+              component="div"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                color: "#000",
+              }}
+            >
+              🍺 Beer of Tomorrow
+            </Typography>
+          </Link>
           <Box style={{ display: "flex" }}>
             <Button
               variant="contained"
@@ -177,14 +178,16 @@ const Header = () => {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-          >
-            🍺 Beer of tomorrow
-          </Typography>
+          <Link to="/">
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            >
+              🍺 Beer of tomorrow
+            </Typography>
+          </Link>
           <Link to="/buy">
             <IconButton
               variant="outlined"
