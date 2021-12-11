@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
   color: #5e6061;
+  margin-top: 4rem;
 }
 
 @media screen and (max-width: 600px) {

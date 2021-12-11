@@ -16,7 +16,7 @@ export default function EcommerceCard(props) {
   return (
     <Card
       sx={{
-        width: xs ? "100%" : "auto",
+        width: xs ? "80%" : "auto",
         minWidth: 260,
         px: 2,
         minHeight: xs ? "40vh" : "80vh",
