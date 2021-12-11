@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
 import EcommerceCard from "./cards/EcommerceCard";
 import FilterPC from "./filters/FilterPC";
 import MobileFilter from "./filters/MobileFilter";
@@ -42,13 +42,15 @@ const Ecommerce = () => {
         {/* Cards */}
         <Grid
           container
-          spacing={3}
-          style={{ textAlign: "center" }}
+          spacing={4}
+          style={{
+            textAlign: "center",
+          }}
           xs={12}
           md={9}
         >
           {list.map((e) => (
-            <Grid item={true} xs={12} md={4}>
+            <Grid item={true} xs={12} md={4} className="precio">
               <EcommerceCard {...e} key={e.id} />
             </Grid>
           ))}

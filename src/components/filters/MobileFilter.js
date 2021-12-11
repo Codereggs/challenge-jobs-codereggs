@@ -16,6 +16,23 @@ import { AiFillFilter } from "react-icons/ai";
 
 const MobileFilter = () => {
   const [open, setOpen] = useState(false);
+  const [value, setValue] = useState([0, 1000]);
+
+  const handleChange = (event, newValue) => {
+    let allPrices = document.querySelectorAll(".precio");
+    allPrices.forEach((e) => {
+      let dato = e.children[0].children[1].children[3].textContent.replace(
+        "$",
+        ""
+      );
+      if (dato > event.target.value[1] || dato < event.target.value[0]) {
+        e.classList.add("disabled");
+      } else {
+        e.classList.remove("disabled");
+      }
+    });
+    setValue(newValue);
+  };
 
   const handleClick = () => {
     setOpen(!open);
@@ -42,10 +59,10 @@ const MobileFilter = () => {
             </Typography>
             <Slider
               getAriaLabel={() => "Rango de Precio"}
-              value={[0, 10000]}
-              /*  onChange={handleChange} */
+              value={value}
+              onChange={handleChange}
               valueLabelDisplay="auto"
-              /*  getAriaValueText={valuetext} */
+              max={1000}
             />
             <hr />
             <Typography variant="h6" style={{ textAlign: "start" }}>

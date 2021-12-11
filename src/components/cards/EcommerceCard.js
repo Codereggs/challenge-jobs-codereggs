@@ -4,7 +4,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { IconButton } from "@mui/material";
+import { IconButton, useMediaQuery } from "@mui/material";
 import orna from "../../img/orna.svg";
 
 const randomPrice = () => {
@@ -12,15 +12,16 @@ const randomPrice = () => {
 };
 
 export default function EcommerceCard(props) {
-  console.log(props);
+  const xs = useMediaQuery("(max-width:480px)");
   return (
     <Card
       sx={{
-        minWidth: 275,
+        width: xs ? "100%" : "auto",
+        minWidth: 260,
         px: 2,
-        minHeight: "80vh",
+        minHeight: xs ? "40vh" : "80vh",
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: xs ? "center" : "space-between",
         alignItems: "center",
         flexDirection: "column",
       }}
@@ -39,6 +40,7 @@ export default function EcommerceCard(props) {
         <Typography variant="h5">{props.name}</Typography>
         <br />
         <img src={props.image_url} alt={props.name} width="50vw" />
+
         <Typography variant="h5">$ {randomPrice()}</Typography>
       </CardContent>
       <CardActions

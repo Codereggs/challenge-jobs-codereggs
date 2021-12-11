@@ -22,3 +22,8 @@
 .mainShop {
   display: grid;
 }
+
+.disabled {
+  display: none;
+  visibility: none;
+}
