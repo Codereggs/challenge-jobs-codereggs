@@ -1,5 +1,9 @@
+/* eslint-disable no-unused-vars */
 import { configureStore } from "@reduxjs/toolkit";
+import listGet from "../features/listGet";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    get: listGet,
+  },
 });

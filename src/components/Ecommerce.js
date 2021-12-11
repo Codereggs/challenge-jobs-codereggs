@@ -2,8 +2,17 @@ import { Grid, Typography } from "@mui/material";
 import EcommerceCard from "./cards/EcommerceCard";
 import FilterPC from "./filters/FilterPC";
 import MobileFilter from "./filters/MobileFilter";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getList } from "../features/listGet";
 
 const Ecommerce = () => {
+  const { list } = useSelector((state) => state.get);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getList());
+  }, [dispatch]);
+
   return (
     <>
       {/* Filtro Mobile */}
@@ -38,9 +47,11 @@ const Ecommerce = () => {
           xs={12}
           md={9}
         >
-          <Grid item xs={12} md={4}>
-            <EcommerceCard />
-          </Grid>
+          {list.map((e) => (
+            <Grid item={true} xs={12} md={4}>
+              <EcommerceCard {...e} key={e.id} />
+            </Grid>
+          ))}
         </Grid>
       </Grid>
     </>
