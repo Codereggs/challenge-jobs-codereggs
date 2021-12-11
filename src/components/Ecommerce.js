@@ -50,9 +50,7 @@ const Ecommerce = () => {
         >
           {list.map((e) => (
             <Grid item={true} xs={12} md={4} className="precio">
-              <Link to="/product">
-                <EcommerceCard {...e} key={e.id} />
-              </Link>
+              <EcommerceCard {...e} key={e.id} />
             </Grid>
           ))}
         </Grid>

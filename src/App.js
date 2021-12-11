@@ -7,7 +7,10 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import theme from "./theme/theme.js";
 import { store } from "./app/store";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProductDetails from "./components/ProductDetails";
+import ShoppingCart from "./components/ShoppingCart";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -16,7 +19,12 @@ function App() {
         <Provider store={store}>
           <BrowserRouter>
             <Header />
-            <Ecommerce />
+            <Routes>
+              <Route path="/" element={<Ecommerce />} />
+              <Route path="product" element={<ProductDetails />} />
+              <Route path="buy" element={<ShoppingCart />} />
+              <Route path="contact" element={<Contact />} />
+            </Routes>
             <Footer />
           </BrowserRouter>
         </Provider>
