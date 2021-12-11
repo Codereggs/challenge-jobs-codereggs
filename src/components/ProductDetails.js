@@ -1,10 +1,4 @@
-import {
-  Grid,
-  List,
-  ListItemText,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
 import { Box } from "@mui/system";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
