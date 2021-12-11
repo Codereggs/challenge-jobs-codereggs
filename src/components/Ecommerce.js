@@ -12,7 +12,6 @@ const Ecommerce = () => {
   useEffect(() => {
     dispatch(getList());
   }, [dispatch]);
-
   return (
     <>
       {/* Filtro Mobile */}
