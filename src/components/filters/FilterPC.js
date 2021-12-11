@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Checkbox, FormControlLabel, Slider, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
